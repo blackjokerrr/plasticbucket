@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test</title>
+    <title>PlayVoice</title>
 </head>
 <body>
     <?php 
         $url = 'https://plasticbucket-cb721.firebaseio.com/NodeMCU.json';
         $response = file_get_contents($url);
-        $result = json_decode($response);
+        $path = json_decode($response);
 
-
-        if($result->ID_01 >= 0 && $result->ID_01 <= 9){
-            print '<META HTTP-EQUIV="Refresh" CONTENT="1;URL=index.php">';
-        }else if($result->ID_01 > 9){
-            print '<audio autoplay>'.'<source src="Marshmello - Alone ( Squalzz Remix ) [kakzmuzik.com].mp3" type="audio/mpeg">'.'</audio>';
+        
+        foreach($path as $i){
+            if($i->Value == 50 && $i->Status == 1){
+                print '<audio autoplay>'.'<source src="plasticvoice.mp3" type="audio/mpeg">'.'</audio>';
+                print "<p>Value: ".$i->Value." Name: ".$i->Name."</p>";
+            }
         }
-        print $result->ID_01;
+        print '<META HTTP-EQUIV="Refresh" CONTENT="4;URL=index.php">';
+
     
     ?>
     
