@@ -23,24 +23,17 @@ void setup() {
   Serial.println(WiFi.localIP());
 
   Firebase.begin(Firebase_HOST, Firebase_AUT);
-
-  
 }
 
 void loop() {
   String ID = "ID_01/Value";
   String path = "/NodeMCU/" + ID;
+  int sensor_value = analogRead(A0);
+
+    Firebase.setInt(path, sensor_value);
+    Serial.println(sensor_value);
+    delay(5000);
   
-  if(checker >= 50){
-    
-    Firebase.setInt("/NodeMCU/ID_01/Status", 1);
-    Firebase.setInt(path, checker);
-    delay(5500);
-    Firebase.setInt("/NodeMCU/ID_01/Status", 0);
-  }else{
-    Firebase.setInt(path, 0);
-  }
-  checker = 0;
-  delay(5000);
+  
   
 }

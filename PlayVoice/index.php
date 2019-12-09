@@ -14,7 +14,7 @@
 
         #Check Plastic Voice ว่าค่าเข้ามาหรือเปล่า
         foreach($path as $i){
-            if($i->Value == 50 && $i->Status == 1){
+            if($i->Value >= 50 && $i->Value != 1024){
                 print '<audio autoplay>'.'<source src="plasticvoice.mp3" type="audio/mpeg">'.'</audio>';
                 print "<p>Value: ".$i->Value." Name: ".$i->Name."</p>";
             }
