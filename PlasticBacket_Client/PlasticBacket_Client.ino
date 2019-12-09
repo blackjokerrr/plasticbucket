@@ -11,8 +11,6 @@ const char* pass = "0819296842";
 #define Firebase_AUT "wZHkaLYqMN3nTecN0t33Pe8HsANOwk2YYI5jFGig"
 
 
-int checker = 50;
-
 // Connect to WIFI
 void connect(){
 
