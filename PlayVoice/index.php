@@ -8,6 +8,8 @@
 </head>
 <body>
     <?php
+
+        /*เราจะรับค่าจาก Firebase Check เพื่อทำการเล่นเพลง*/
         $url = 'https://plasticbucket-cb721.firebaseio.com/NodeMCU.json'; #ดึงค่าผ่าน FireBase เป็น Json 
         $content = file_get_contents($url);
         $path = json_decode($content); #Decode Json ออกเพื่อนำมาเก็บไว้ในตัวแปร path
