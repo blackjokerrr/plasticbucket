@@ -2,7 +2,7 @@
 #include<FirebaseArduino.h>
 // Import Library ESP8266WiFi กับ FirebaseArduino
 
-//User กับ Pass ของ WIFI
+//User กับ Pass ของ WIFI เป็น ตัวแปร Pointer ที่เป็น Constant
 const char* user = "Nest";
 const char* pass = "0819296842";
 
@@ -11,15 +11,15 @@ const char* pass = "0819296842";
 #define Firebase_AUT "wZHkaLYqMN3nTecN0t33Pe8HsANOwk2YYI5jFGig"
 
 
-// Connect to WIFI
-void connect(){
+// Function Setup WiFi
+void setup_wifi(){
 
   // set user and pass ของ WIFI
   WiFi.begin(user, pass);
 
   //ถ้าเชื่อมไม่ติดจะทำการ show '.' ไปจนกว่าจะเชื่อมติด
   while(WiFi.status() != WL_CONNECTED){
-    Serial.print(".");
+    Serial.println(".");
     delay(1000);
   }
 
@@ -32,7 +32,7 @@ void connect(){
 //ตั้งค่าต่างๆของ NODEMCU WIFI มีการเรียกการ connect
 void setup() {
   Serial.begin(9600);
-  connect();
+  setup_wifi();
   Firebase.begin(Firebase_HOST, Firebase_AUT);
 }
 
