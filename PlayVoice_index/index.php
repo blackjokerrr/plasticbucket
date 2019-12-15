@@ -27,6 +27,7 @@
         $content = file_get_contents($url);
         $path = json_decode($content); #Decode Json ออกเพื่อนำมาเก็บไว้ในตัวแปร path
 
+        #ดึง API ของเวลาในกรุงเทพ
         $time_of_bangkok = 'http://worldtimeapi.org/api/timezone/Asia/Bangkok';
         $time_of_bangkok_content = file_get_contents($time_of_bangkok);
         $clock = json_decode($time_of_bangkok_content);
@@ -56,24 +57,28 @@
             $counter_Bottle = $navigate->Plastic_Bottle;
         }
 
-        $start = strpos($clock->datetime, 'T') + 1;
+        /* ส่วนเเสริมของ Project มีการ Reset ขวดพลาสติกทุกๆ 1 วัน และ นับจำนวนขวดพลาสติกที่เก็บทุกๆ 1 วัน */
+        $start = strpos($clock->datetime, 'T') + 1; # หาตัวอักษร T
 
-        $stop  = strpos($clock->datetime, ".");
+        $stop  = strpos($clock->datetime, "."); # หาอักขระ '.'
 
+        # เข้าไปใน String ของ datetime ตัวอย่างเช่น 2019-05-01T19:20:35.5999999
         for($loop = 0;$loop < 2;$loop++){
             $reset.= (string)$clock->datetime[$start];
             $start += 1;
         }
 
+        # ถ้าครบ 24 ชั่วโมง จะทำการ reset ขวดพลาสติก หรือก็คือ มีเจ้าหน้าที่หรือแม่บ้านมาเก็บขวดไปเรียบร้อยเเล้ว
         if($reset == "24"){
             $counter_Bottle = 0;
         }
 
+        # Show ขวดพลาสติกบน Website
         print '<p class="content">จำนวนขวดของวันนี้ : '.$counter_Bottle.'</p> ';
         print '</div>';
 
         #ทำการ Refesh หน้าเว็บทุกๆ 4 วินาที
-        #print '<META HTTP-EQUIV="Refresh" CONTENT="4;URL=index.php">';
+        print '<META HTTP-EQUIV="Refresh" CONTENT="4;URL=index.php">';
 
 
     ?>
