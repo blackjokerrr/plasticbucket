@@ -6,6 +6,7 @@
 const char* user = "Nest";
 const char* pass = "0819296842";
 
+int counter = 0;
 //Host ของ Firebase กับ รหัสยืนยันตัวของ Firebase
 #define Firebase_HOST "plasticbucket-cb721.firebaseio.com"
 #define Firebase_AUT "wZHkaLYqMN3nTecN0t33Pe8HsANOwk2YYI5jFGig"
@@ -31,7 +32,7 @@ void setup_wifi(){
 
 //ตั้งค่าต่างๆของ NODEMCU WIFI มีการเรียกการ connect
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(500000);
   setup_wifi();
   Firebase.begin(Firebase_HOST, Firebase_AUT);
 }
@@ -41,16 +42,21 @@ void loop() {
   //ตั้งค่า path และ id ที่อยู่บน firebase
   String ID = "ID_01/Value";
   String path = "/NodeMCU/" + ID;
+
   
   // อ่านค่าจาก sensor มาเก็บไว้ใน sensor_value
   int sensor_value = analogRead(A0);
 
+  if(sensor_value >= 200 && sensor_value <= 800){
+    counter++;
+    Firebase.setInt("/NodeMCU/ID_01/Plastic_Bottle", counter);
+  }
   // โยนค่าขึ้นไปบน Firebase ด้วยคำสั่ง Firebase.setInt(ที่อยู่, ค่า);
   Firebase.setInt(path, sensor_value);
 
   // Show value ผ่านทาง Serial Monitor
   Serial.println(sensor_value);
-  delay(5000);
+  delay(1000);
   
   
   
