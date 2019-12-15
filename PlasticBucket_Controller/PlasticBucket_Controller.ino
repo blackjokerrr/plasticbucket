@@ -47,7 +47,7 @@ void loop() {
   // อ่านค่าจาก sensor มาเก็บไว้ใน sensor_value
   int sensor_value = analogRead(A0);
 
-  if(sensor_value >= 200 && sensor_value <= 800){
+  if(sensor_value >= 100 && sensor_value <= 800){
     counter++;
     Firebase.setInt("/NodeMCU/ID_01/Plastic_Bottle", counter);
   }
