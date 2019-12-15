@@ -7,9 +7,11 @@
 
 <h1>Service</h1>
 <li>Firebase : <a href="https://firebase.google.com/">https://firebase.google.com/</a></li>
+<li>Bootstrap : <a href="https://getbootstrap.com/">https://getbootstrap.com/</a></li>
+<li>Google Font : <a href="https://fonts.google.com/">https://fonts.google.com/</a></li>
 
 <h1>Built With</h1>
-<li>c++ language</li>
+<li>C++ language</li>
 <li>php language</li>
 
 <h1>วิธีการ</h1>
