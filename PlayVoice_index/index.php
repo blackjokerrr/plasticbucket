@@ -77,7 +77,7 @@
         print '<p class="content">จำนวนขวดของวันนี้ : '.$counter_Bottle.'</p> ';
         print '</div>';
 
-        #ทำการ Refesh หน้าเว็บทุกๆ 4 วินาที
+        #ทำการ Refesh หน้าเว็บทุกๆ 2 วินาที
         print '<META HTTP-EQUIV="Refresh" CONTENT="2;URL=index.php">';
 
 
