@@ -26,11 +26,21 @@
 
 [![](title_video.jpeg)](https://www.youtube.com/watch?v=BJ4cJ-vACIc&t=7s)
 
+<h1>อุปกรณ์ (จำเป็นต้องมีก่อนไปขั้นตอนการใช้งาน)</h1>
+<li>Breadboard 1 ชิ้น</li>
+<li>Laser Head Transmitter Sensor Module 1 ชิ้น</li>
+<li>Photoresistor Light Sensor Module 1 ชิ้น</li>
+<li>สายจั้ม (ใช้ได้ทั้งหมดไม่ว่าจะเป็น ผู้-ผู้, ผู้-เมีย, เมีย-เมีย) >= 6 สาย</li>
+<li>กล่องพลาสติก หรือ ถังพลาสติก 1 กล่อง/ถัง</li>
+
 
 <h1>การใช้งาน</h1>
-<li>เมื่อนำไปใช้จริง จำเป็นต้องลง ArduinoJson และ FirebaseArduino ก่อน และ ติดตั้ง Web Server และนำ Index.php ขึ้นไปไว้บน Web Server ก็ใช้งานได้ทันที</li>
+<li>ติดตั้ง Laser Head Transmitter Sensor Module กับ Photoresistor Light Sensor Module วางไว้ขนานกัน และ เชื่อม NodeMCU ESP8266 กับ Breadboard วางไว้ด้านบนของ Plastic Bucket</li>
+<li>จำเป็นต้องลง ArduinoJson และ FirebaseArduino ก่อน และ ติดตั้ง Web Server และนำ Index.php ขึ้นไปไว้บน Web Server ก็ใช้งานได้ทันที</li>
 <li>FirebaseArduino : <a href="https://github.com/FirebaseExtended/firebase-arduino">https://github.com/FirebaseExtended/firebase-arduino</a></li>
 <li>ArduinoJson : <a href="https://github.com/bblanchon/ArduinoJson">https://github.com/bblanchon/ArduinoJson</a></li>
+
+
 
 <h1>Member</h1>
 <li>นาย ศิรวิทย์ ยอดจิตร 61070221</li>
