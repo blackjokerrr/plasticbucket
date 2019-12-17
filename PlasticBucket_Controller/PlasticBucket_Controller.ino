@@ -31,11 +31,11 @@ void setup_wifi(){
   Serial.println(WiFi.localIP());
 }
 
-//ตั้งค่าต่างๆของ NODEMCU WIFI มีการเรียกการ connect
+//ตั้งค่าต่างๆของ NODEMCU WIFI มีการเรียกการ Connect
 void setup() {
-  Serial.begin(500000);
+  Serial.begin(500000); // กำหนดความเร็วของ NodeMCU ESP8266 WiFi
   setup_wifi();
-  Firebase.begin(Firebase_HOST, Firebase_AUT);
+  Firebase.begin(Firebase_HOST, Firebase_AUT); // เชื่อมต่อ Firebase
 }
 
 // ส่วนตรงนี้จะเป็นการทำงานซ้ำๆเรื่อยๆ
