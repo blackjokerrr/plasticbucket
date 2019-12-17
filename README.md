@@ -18,3 +18,7 @@
 <h1>วิธีการ</h1>
 <li>มีการใช้ php ในการเขียนเว็บดึง API ของ Firebase เพื่อนำมาแสดงผล และ Check ค่าเพื่อเล่น plasticvoice.mp3 ซึ่งเป็นเสียงที่ทำการบันทึกมาจาก Google Translate</li>
 <li>มีการส่งค่าจาก Sensor ที่ติดตั้งอยู่กับตัวถัง จะมีการส่งค่าขึ้นไปเก็บบน Firebase โดยการเขียนโค้ด ที่อยู่ใน PlasticBucket_Controller</li>
+
+<h1>Video Presentation</h1>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BJ4cJ-vACIc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
