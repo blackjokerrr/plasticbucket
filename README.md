@@ -21,4 +21,4 @@
 
 <h1>Video Presentation</h1>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BJ4cJ-vACIc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![](title_video.jpeg)](https://www.youtube.com/watch?v=BJ4cJ-vACIc&t=7s)
